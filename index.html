@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Доступ до посилання</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: #fff;
+      padding: 30px 20px;
+      border-radius: 16px;
+      max-width: 400px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      animation: fadeIn 0.6s ease;
+    }
+
+    h1 {
+      font-size: 22px;
+      margin-bottom: 20px;
+      line-height: 1.4;
+    }
+
+    .step {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin: 20px 0;
+      text-align: left;
+      animation: slideUp 0.5s ease;
+    }
+
+    .step:nth-child(2) { animation-delay: 0.2s; }
+    .step:nth-child(3) { animation-delay: 0.4s; }
+
+    .icon {
+      width: 40px;
+      height: 40px;
+      background: #ffe6ec;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      animation: pulse 1.5s infinite;
+    }
+
+    .text {
+      font-size: 14px;
+      color: #333;
+    }
+
+    #openBtnWrapper {
+      margin-top: 20px;
+    }
+
+    button {
+      padding: 14px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      background: #ff4d6d;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      animation: pulse 1.5s infinite;
+      width: 100%;
+      max-width: 250px;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #ff3355;
+    }
+
+    /* Анімації */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🔗 Доступ до посилання</h1>
+    
+    <div class="step">
+      <div class="icon">①</div>
+      <div class="text">Натисніть кнопку нижче</div>
+    </div>
+    
+    <div class="step">
+      <div class="icon">②</div>
+      <div class="text">Підтвердіть перехід у зовнішньому браузері</div>
+    </div>
+    
+    <div class="step">
+      <div class="icon">③</div>
+      <div class="text">Готово! Ви перейдете на Google</div>
+    </div>
+
+    <div id="openBtnWrapper">
+      <button onclick="window.open('https://www.google.com', '_blank')">
+        Відкрити Google
+      </button>
+    </div>
+  </div>
+
+  <script>
+    // Додатковий код для забезпечення відкриття в зовнішньому браузері
+    document.querySelector('button').addEventListener('click', function(e) {
+      // Для мобільних пристроїв - пробуємо відкрити в новому вікні
+      window.open('https://www.google.com', '_blank');
+    });
+  </script>
+</body>
+</html>
